@@ -72,11 +72,11 @@ body::before {
 .theme-flash body::before { opacity: 0.06 }
 
 /* Card wrapper */
-.acetra-table-wrap { padding: 18px; max-width: 1100px; margin: 0 auto; overflow-x: auto; }
-.acetra-card { background: var(--card); border-radius: 14px; padding: 12px; box-shadow: var(--card-shadow); border: 1px solid var(--soft-border); }
+.acetra-table-wrap { padding: 18px; margin: 0 auto; overflow-x: auto; }
+.acetra-card { background: var(--card); border-radius: 14px; padding: 12px; box-shadow: var(--card-shadow); border: 1px solid var(--soft-border); overflow: visible; display: inline-block; min-width: 100%; }
 
 /* Table */
-.acetra-table { width: 100%; border-collapse: collapse; font-family: 'Poppins', Arial, Helvetica, sans-serif; }
+.acetra-table { width: 100%; border-collapse: collapse; font-family: 'Poppins', Arial, Helvetica, sans-serif; table-layout: auto; }
 .acetra-table thead th { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--soft-border); color: var(--text-strong); font-weight:600 }
 .acetra-table tbody td { padding: 12px 12px; border-bottom: 1px solid var(--soft-border); vertical-align: top; }
 .acetra-epc { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; color: var(--brand); font-weight:600 }
@@ -86,8 +86,8 @@ body::before {
 
 .acetra-details { background: var(--row-hover); padding: 10px; border-left: 2px solid var(--soft-border); border-radius: 10px; overflow: hidden; transition: max-height .28s ease, opacity .2s ease; max-height: 0; opacity: 0; }
 .acetra-details.open { max-height: 800px; opacity: 1; }
-.acetra-details { background: var(--row-hover); padding: 10px; border-left: 2px solid var(--soft-border); border-radius: 10px; overflow-x: auto; overflow-y: visible; transition: max-height .28s ease, opacity .2s ease; }
-.acetra-details.open { max-height: 9999px; opacity: 1; }
+.acetra-details { background: var(--row-hover); padding: 10px; border-left: 2px solid var(--soft-border); border-radius: 10px; overflow: visible; transition: max-height .28s ease, opacity .2s ease; }
+.acetra-details.open { max-height: none; opacity: 1; }
 
 /* make detail rows render above transformed/hovered rows to avoid overlap */
 .acetra-details-row { position: relative; z-index: 3 }
@@ -223,15 +223,18 @@ body::before {
 @media (max-width: 640px) {
 	.acetra-status-row { flex-direction: column; align-items: flex-start }
 	.acetra-table thead { display: none; }
-	.acetra-table tbody td { display: block; width: 100%; }
-	.acetra-table tbody tr { margin-bottom: 12px; border-bottom: 1px solid var(--soft-border); padding-bottom: 12px; }
-	.acetra-details-row td { padding: 8px 6px; }
+	.acetra-table tbody td { display: block; width: 100%; padding: 6px 0; }
+	.acetra-table tbody tr { margin-bottom: 8px; border-bottom: none; padding-bottom: 0; }
+	.acetra-details-row { display: contents; }
+	.acetra-details-row td { padding: 8px 6px; display: block; width: 100%; margin-top: 8px; overflow: visible; }
+	.acetra-details-table { width: 100%; }
+	.acetra-history-table { width: 100%; }
 	.acetra-header-top { flex-direction: column; align-items: flex-start; gap: 12px }
 	.acetra-search { width: 100%; }
 	.acetra-search input { width: calc(100% - 24px); }
 	.acetra-header-top .copy-btn, .acetra-header-top .icon-btn { padding: 6px 10px; font-size: 12px; }
 	.acetra-card { padding: 12px 12px; }
-	.acetra-table { min-width: 520px; }
+	.acetra-table { width: 100%; }
 	.acetra-details { padding: 8px; }
 	.icon-btn { width: 28px; height: 28px; padding: 4px; }
 	.icon-btn svg { width: 13px; height: 13px; }

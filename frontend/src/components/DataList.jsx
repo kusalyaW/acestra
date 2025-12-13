@@ -328,7 +328,7 @@ export default function DataList({ query: externalQuery, setQuery: setExternalQu
                 </tr>
                     {isOpen && (
                       <tr className="acetra-details-row">
-                        <td colSpan={5}>
+                        <td colSpan={6}>
                           <div className={`acetra-details ${isOpen ? 'open' : ''}`}>
                             <div className="acetra-details-content">
                               <table className="acetra-details-table">
