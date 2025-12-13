@@ -205,7 +205,7 @@ body::before {
 	.acetra-title { font-size: 24px; }
 	.acetra-subtitle { font-size: 14px; }
 	.acetra-table thead th { padding: 10px 8px; }
-	.acetra-table tbody td { padding: 10px 8px; }
+	.acetra-table tbody td { padding: 8px 4px; }
 }
 /* row hover and highlight */
 .acetra-row { transition: background var(--theme-transition-duration) ease, transform .12s ease; border-radius: 10px; cursor: pointer }
@@ -224,6 +224,7 @@ body::before {
 	.acetra-status-row { flex-direction: column; align-items: flex-start }
 	.acetra-table thead { display: none; }
 	.acetra-table tbody td { display: block; width: 100%; }
+	.acetra-table tbody tr { margin-bottom: 12px; border-bottom: 1px solid var(--soft-border); padding-bottom: 12px; }
 	.acetra-details-row td { padding: 8px 6px; }
 	.acetra-header-top { flex-direction: column; align-items: flex-start; gap: 12px }
 	.acetra-search { width: 100%; }
@@ -233,9 +234,10 @@ body::before {
 	.acetra-table { min-width: 520px; }
 	.acetra-details { padding: 8px; }
 	.icon-btn { width: 28px; height: 28px; padding: 4px; }
-	.icon-btn svg { width: 14px; height: 14px; }
+	.icon-btn svg { width: 13px; height: 13px; }
 	.acetra-toggle { padding: 4px 6px; font-size: 12px; }
-}
+	.acetra-table tbody tr td:last-child { display: flex; gap: 6px; margin-top: 8px; }
+}}
 
 @media (max-width: 480px) {
   .acetra-table-wrap { padding: 8px; }
@@ -244,7 +246,6 @@ body::before {
   .acetra-subtitle { font-size: 13px; }
   .acetra-search { gap: 6px; }
   .copy-btn { width: 100%; text-align: center; }
-  .icon-btn { width: 100%; justify-content: center; }
   .acetra-table tbody td { padding: 8px 6px; }
 }
 
