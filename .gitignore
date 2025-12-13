@@ -1,0 +1,5 @@
+*.json
+*.env
+# or more specific:
+# asset-tracking-f62ce-firebase-adminsdk-fbsvc-752c08b928.json
+# acetra-a4458-firebase-adminsdk-fbsvc-5e01b2aec4.json
