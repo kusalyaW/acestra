@@ -232,6 +232,9 @@ body::before {
 	.acetra-card { padding: 12px 12px; }
 	.acetra-table { min-width: 520px; }
 	.acetra-details { padding: 8px; }
+	.icon-btn { width: 28px; height: 28px; padding: 4px; }
+	.icon-btn svg { width: 14px; height: 14px; }
+	.acetra-toggle { padding: 4px 6px; font-size: 12px; }
 }
 
 @media (max-width: 480px) {
