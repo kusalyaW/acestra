@@ -225,11 +225,10 @@ body::before {
 	.acetra-table thead { display: none; }
 	.acetra-table tbody td { display: block; width: 100%; }
 	.acetra-details-row td { padding: 8px 6px; }
-	.acetra-search input { width: 100%; }
-	.acetra-header-top { align-items: stretch; }
+	.acetra-header-top { flex-direction: column; align-items: flex-start; gap: 12px }
 	.acetra-search { width: 100%; }
-	.acetra-search input { flex: 1; }
-	.acetra-header-top .copy-btn, .acetra-header-top .icon-btn { width: 100%; justify-content: center; }
+	.acetra-search input { width: calc(100% - 24px); }
+	.acetra-header-top .copy-btn, .acetra-header-top .icon-btn { padding: 6px 10px; font-size: 12px; }
 	.acetra-card { padding: 12px 12px; }
 	.acetra-table { min-width: 520px; }
 	.acetra-details { padding: 8px; }
