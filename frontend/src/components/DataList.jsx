@@ -472,7 +472,9 @@ function downloadCSV(item) {
   try {
     const rawHist = getHistory(item) // returns entries sorted ascending
     for (const h of rawHist) {
-      const entry = { Timestamp: h.key || (h.t ? new Date(h.t).toLocaleString() : '') }
+      // Format timestamp compactly for mobile CSV: use ISO format which is shorter
+      const ts = h.key || (h.t ? new Date(h.t).toISOString().slice(0, 19).replace('T', ' ') : '')
+      const entry = { Timestamp: ts }
       if (h.raw && typeof h.raw === 'object') {
         // copy all fields from the raw object so we can detect available keys
         for (const kk of Object.keys(h.raw)) { entry[kk] = h.raw[kk]; seenKeys.add(kk) }
