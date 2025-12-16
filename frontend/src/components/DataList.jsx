@@ -274,12 +274,12 @@ export default function DataList({ query: externalQuery, setQuery: setExternalQu
         <table className="acetra-table">
           <thead>
             <tr>
-              <th style={{ width: 260 }}>EPC</th>
-              <th style={{ width: 240 }}>Item Name</th>
+              <th>EPC</th>
+              <th>Item Name</th>
               <th>Last Location</th>
               <th>Last Direction</th>
               <th>Last Seen</th>
-              <th style={{ width: 100 }}>Actions</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -308,7 +308,7 @@ export default function DataList({ query: externalQuery, setQuery: setExternalQu
                     </td>
                     <td>{seen}</td>
                     <td>
-                            <div style={{ display: 'flex', gap: 6, alignItems: 'center', justifyContent: 'flex-end', whiteSpace: 'nowrap' }}>
+                            <div style={{ display: 'flex', gap: 6, alignItems: 'center', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                               <button
                                 className="acetra-toggle"
                                 onClick={(e) => { e.stopPropagation(); setExpanded(prev => ({ ...prev, [id]: !prev[id] })) }}

@@ -72,21 +72,19 @@ body::before {
 .theme-flash body::before { opacity: 0.06 }
 
 /* Card wrapper */
-.acetra-table-wrap { padding: 18px; margin: 0 auto; overflow-x: auto; }
-.acetra-card { background: var(--card); border-radius: 14px; padding: 12px; box-shadow: var(--card-shadow); border: 1px solid var(--soft-border); overflow: visible; display: block; width: 100%; }
+.acetra-table-wrap { padding: 10px 8px; margin: 0; overflow-x: hidden; width: 100%; box-sizing: border-box; }
+.acetra-card { background: var(--card); border-radius: 14px; padding: 10px; box-shadow: var(--card-shadow); border: 1px solid var(--soft-border); overflow: hidden; display: block; width: 100%; box-sizing: border-box; }
 
 /* Table */
-.acetra-table { width: 100%; border-collapse: collapse; font-family: 'Poppins', Arial, Helvetica, sans-serif; table-layout: auto; min-width: fit-content; }
-.acetra-table thead th { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--soft-border); color: var(--text-strong); font-weight:600 }
-.acetra-table tbody td { padding: 12px 12px; border-bottom: 1px solid var(--soft-border); vertical-align: top; }
-.acetra-epc { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; color: var(--brand); font-weight:600 }
+.acetra-table { width: 100%; border-collapse: collapse; font-family: 'Poppins', Arial, Helvetica, sans-serif; table-layout: fixed; min-width: 0; box-sizing: border-box; }
+.acetra-table thead th { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--soft-border); color: var(--text-strong); font-weight:600; word-break: break-word; white-space: normal; min-width: 0; }
+.acetra-table tbody td { padding: 8px 6px; border-bottom: 1px solid var(--soft-border); vertical-align: top; word-break: break-word; white-space: normal; min-width: 0; }
+.acetra-epc { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; color: var(--brand); font-weight:600; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; word-break: keep-all; }
 
 .acetra-toggle { background: transparent; border: none; border-radius: 6px; padding: 6px 10px; cursor: pointer; color: var(--muted); font-weight:700 }
 .acetra-toggle:hover { color: var(--brand); transform: scale(1.03); }
 
-.acetra-details { background: var(--row-hover); padding: 10px; border-left: 2px solid var(--soft-border); border-radius: 10px; overflow: hidden; transition: max-height .28s ease, opacity .2s ease; max-height: 0; opacity: 0; }
-.acetra-details.open { max-height: 800px; opacity: 1; }
-.acetra-details { background: var(--row-hover); padding: 10px; border-left: 2px solid var(--soft-border); border-radius: 10px; overflow: visible; transition: max-height .28s ease, opacity .2s ease; }
+.acetra-details { background: var(--row-hover); padding: 10px; border-left: 2px solid var(--soft-border); border-radius: 10px; overflow-x: auto; overflow-y: visible; transition: max-height .28s ease, opacity .2s ease; max-height: 0; opacity: 0; }
 .acetra-details.open { max-height: none; opacity: 1; }
 
 /* make detail rows render above transformed/hovered rows to avoid overlap */
@@ -98,7 +96,7 @@ body::before {
 .acetra-error { padding: 12px; color: #a00; }
 
 .acetra-details-table { border-collapse: collapse; width: 100%; margin-bottom: 8px; }
-.acetra-details-table, .acetra-history-table { min-width: 420px; }
+.acetra-details-table, .acetra-history-table { min-width: 0; width: 100%; }
 .acetra-details-table th { text-align: left; padding: 6px 8px; color: var(--text); width: 180px; }
 .acetra-details-table td { padding: 6px 8px; }
 .acetra-history-table { border-collapse: collapse; width: 100%; margin-top: 6px; }
@@ -240,7 +238,7 @@ body::before {
 	.icon-btn svg { width: 13px; height: 13px; }
 	.acetra-toggle { padding: 4px 6px; font-size: 12px; }
 	.acetra-table tbody tr td:last-child { display: flex; gap: 6px; margin-top: 8px; }
-}}
+}
 
 @media (max-width: 480px) {
   .acetra-table-wrap { padding: 8px; }
